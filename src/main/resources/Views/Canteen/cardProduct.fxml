@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane accessibleRole="BUTTON" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClick" prefHeight="135.0" prefWidth="270.0" style="-fx-background-color: white;" styleClass="card-container" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.Canteen.CardProduct">
+   <children>
+      <HBox prefHeight="168.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="101.0" prefWidth="98.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="102.0" fitWidth="98.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.4000000000000057" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.4000000000000057" AnchorPane.topAnchor="0.0" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </AnchorPane>
+            <VBox alignment="CENTER" prefHeight="168.0" prefWidth="174.0" spacing="1.0">
+               <children>
+                  <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="190.0" style="-fx-font-weight: Bold; -fx-font-size: 14;" text="Ayam Geprek" textAlignment="CENTER" />
+                  <Label fx:id="priceLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="190.0" style="-fx-font-size: 14;" text="Rp10.000" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</AnchorPane>
