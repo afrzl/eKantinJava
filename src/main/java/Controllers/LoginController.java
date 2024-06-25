@@ -53,6 +53,8 @@ public class LoginController implements Initializable {
 
             if (user.getRole().equals("admin")) {
                 AlertUtils.showSuccessAlert("Sukses", "Berhasil login sebagai admin!");
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                SceneLoader.loadScene(stage, "/Views/Admin/dashboard.fxml", "Dashboard");
             } else if (user.getRole().equals("canteen")) {
                 AlertUtils.showSuccessAlert("Sukses", "Berhasil login sebagai kantin!");
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -67,7 +69,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        emailField.setText("kantin");
+        emailField.setText("admin");
         passwordField.setText("admin");
     }
 }

@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.ProductController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Admin.ProductController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -193,7 +193,7 @@
                                                       <ImageView fx:id="imageView" fitHeight="71.0" fitWidth="76.0" layoutX="1.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
                                                    </children>
                                                 </AnchorPane>
-                                                <Button fx:id="uploadImageButton" mnemonicParsing="false" onAction="#handleUploadImage" prefHeight="30.0" prefWidth="83.0" text="Upload">
+                                                <Button fx:id="uploadImageButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" text="Upload">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>

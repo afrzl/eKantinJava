@@ -88,12 +88,12 @@ public class CategoryDAO {
         }
     }
 
-    public void deleteCategory(int id) {
+    public void deleteCategory(Category category) {
         String query = "DELETE FROM categories WHERE id = ?";
         try (Connection conn = Database.getInstance().getConn();
              PreparedStatement preparedStatement = conn.prepareStatement(query)) {
 
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, category.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

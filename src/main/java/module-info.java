@@ -19,7 +19,9 @@ module pointOfSales {
 
     opens Views to javafx.fxml;
     opens Views.Canteen to javafx.fxml;
+    opens Views.Admin to javafx.fxml;
     opens Controllers.Canteen to javafx.fxml;
+    opens Controllers.Admin to javafx.fxml;
     opens Controllers to javafx.fxml;
     opens Models to javafx.fxml;
 
