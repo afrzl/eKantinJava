@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.ProductController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="172.0" layoutY="76.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox layoutY="59.0" prefHeight="141.0" prefWidth="546.0" />
+                        <AnchorPane layoutY="-14.0" maxHeight="1.7976931348623157E308" prefHeight="600.0" prefWidth="1039.2" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-14.0">
+                           <children>
+                              <VBox layoutX="43.2" layoutY="14.0" prefHeight="54.0" prefWidth="958.0" styleClass="pane" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+                                 <children>
+                                    <HBox prefHeight="50.0" prefWidth="1041.0">
+                                       <children>
+                                          <Label text="Daftar Produk" textFill="#05149e">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="15.0" top="13.0" />
+                                             </padding>
+                                          </Label>
+                                          <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="2.0" style="-fx-background-color: #f1f1f1;">
+                                             <HBox.margin>
+                                                <Insets bottom="13.0" left="15.0" right="15.0" top="13.0" />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets top="13.0" />
+                                             </padding>
+                                          </Separator>
+                                          <Label text="Selamat datang, ">
+                                             <font>
+                                                <Font name="System Italic" size="16.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="15.0" top="13.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="topbarUsername" text="admin">
+                                             <font>
+                                                <Font name="System Italic" size="16.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="13.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label fx:id="topbarTime" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" prefHeight="38.0" text="04 Februari 2024 08:00:01" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets right="14.0" top="13.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox layoutX="40.0" layoutY="89.0" maxWidth="1.7976931348623157E308" prefHeight="667.0" prefWidth="1226.0" spacing="30.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="89.0">
+                                 <children>
+                                    <VBox prefHeight="496.0" prefWidth="440.0" spacing="10.0" styleClass="card-container">
+                                       <children>
+                                          <HBox prefHeight="14.0" prefWidth="440.0" spacing="5.0">
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="128.0" text="Nama Produk :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="nameField" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="298.0" promptText="Cth: Ayam Geprek">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="14.0" prefWidth="440.0" spacing="5.0">
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="128.0" text="Kategori :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <ComboBox fx:id="categoryField" prefHeight="28.0" prefWidth="298.0" promptText="Pilih Kategori" />
+                                             </children>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="169.0" prefWidth="440.0" spacing="5.0">
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="128.0" text="Deskripsi :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextArea fx:id="descriptionField" prefHeight="170.0" prefWidth="298.0" promptText="Cth: Ayam geprek paling enak">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextArea>
+                                             </children>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="14.0" prefWidth="440.0" spacing="5.0">
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="128.0" text="Harga :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="priceField" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="298.0" promptText="Cth: 10000">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="14.0" prefWidth="440.0" spacing="5.0">
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="128.0" text="Stok :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="stockField" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="298.0" promptText="Cth: 10">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox prefHeight="82.0" prefWidth="440.0" spacing="5.0">
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Label prefHeight="26.0" prefWidth="128.0" text="Foto :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <AnchorPane prefHeight="81.0" prefWidth="81.0" style="-fx-background-color: black;">
+                                                   <children>
+                                                      <ImageView fx:id="imageView" fitHeight="71.0" fitWidth="76.0" layoutX="1.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <Button fx:id="uploadImageButton" mnemonicParsing="false" onAction="#handleUploadImage" prefHeight="30.0" prefWidth="83.0" text="Upload">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" top="25.0" />
+                                                   </HBox.margin>
+                                                   <styleClass>
+                                                      <String fx:value="btn" />
+                                                      <String fx:value="btn-default" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="34.0" prefWidth="440.0" spacing="10.0">
+                                             <padding>
+                                                <Insets left="10.0" right="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Button fx:id="createButton" mnemonicParsing="false" onAction="#handleSave" prefHeight="75.0" prefWidth="83.0" text="Tambah">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="btn" />
+                                                      <String fx:value="btn-primary" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClear" prefHeight="74.0" prefWidth="83.0" text="Clear">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="btn" />
+                                                      <String fx:value="btn-default" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Button fx:id="updateButton" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="78.0" prefWidth="83.0" text="Ubah" visible="false">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="btn" />
+                                                      <String fx:value="btn-default" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDelete" prefHeight="86.0" prefWidth="83.0" text="Hapus" visible="false">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="btn" />
+                                                      <String fx:value="btn-danger" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <HBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="667.0" prefWidth="760.0" styleClass="card-container" stylesheets="@../css/dashboard.css">
+                                       <children>
+                                          <TableView fx:id="product_table" maxWidth="1.7976931348623157E308" onMouseClicked="#handleTableClick" prefHeight="186.0" prefWidth="920.0" HBox.hgrow="ALWAYS">
+                                             <columns>
+                                                <TableColumn fx:id="product_col_no" prefWidth="26.39996337890625" text="No." />
+                                                <TableColumn fx:id="product_col_image" minWidth="0.0" prefWidth="123.199951171875" text="Gambar" />
+                                                <TableColumn fx:id="product_col_name" prefWidth="116.80010986328125" text="Nama Produk" />
+                                                <TableColumn fx:id="product_col_desc" prefWidth="195.99993896484375" text="Deskripsi" />
+                                                <TableColumn fx:id="product_col_price" prefWidth="84.7998046875" text="Harga" />
+                                                <TableColumn fx:id="product_col_stock" prefWidth="88.00006103515625" text="Stok" />
+                                             </columns>
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="10.0" styleClass="sidebar" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIconView glyphName="BARS" layoutX="22.0" layoutY="29.0" size="1.5em" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
+                        <VBox layoutX="20.0" layoutY="264.0" spacing="10.0" styleClass="sidebar_opt" stylesheets="@../css/dashboard.css">
+                           <children>
+                              <FontAwesomeIconView fx:id="navDashboardBtn" accessibleRole="BUTTON" fill="#05149e" glyphName="HOME" onMouseClicked="#handleNavDashboard" size="1.5em" styleClass="sidebar_opt_active">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="navCategoryBtn" accessibleRole="BUTTON" glyphName="TAGS" onMouseClicked="#handleNavCategory" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="navUserBtn" accessibleRole="BUTTON" glyphName="USERS" onMouseClicked="#handleUserNav" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="navProductBtn" accessibleRole="BUTTON" glyphName="CUBE" onMouseClicked="#handleNavProduct" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Separator prefHeight="2.0" prefWidth="20.0" style="-fx-background-color: #f1f1f1;">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <FontAwesomeIconView fx:id="navSignoutBtn" accessibleRole="BUTTON" glyphName="SIGN_OUT" onMouseClicked="#handleNavSignOut" size="1.5em" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </left>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

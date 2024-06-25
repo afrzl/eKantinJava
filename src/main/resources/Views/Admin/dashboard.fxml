@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.DashboardController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="172.0" layoutY="76.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <AnchorPane prefHeight="600.0" prefWidth="1039.2" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox prefHeight="250.0" prefWidth="986.0" styleClass="pane" stylesheets="@../css/dashboard.css" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox prefHeight="50.0" prefWidth="985.0">
+                                 <children>
+                                    <Label text="Dashboard" textFill="#05149e">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="15.0" top="13.0" />
+                                       </padding>
+                                    </Label>
+                                    <Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="2.0" style="-fx-background-color: #f1f1f1;">
+                                       <HBox.margin>
+                                          <Insets bottom="13.0" left="15.0" right="15.0" top="13.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets top="13.0" />
+                                       </padding>
+                                    </Separator>
+                                    <Label text="Selamat datang, ">
+                                       <font>
+                                          <Font name="System Italic" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="15.0" top="13.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="topbarUsername" text="admin">
+                                       <font>
+                                          <Font name="System Italic" size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="13.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="topbarTime" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" prefHeight="38.0" text="04 Februari 2024 08:00:01" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="14.0" top="13.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox maxWidth="1.7976931348623157E308" prefHeight="200.0">
+                                 <children>
+                                    <VBox prefHeight="160.0" prefWidth="297.0" styleClass="card" stylesheets="@../css/dashboard.css">
+                                       <children>
+                                          <Label text="Total Produk" textFill="WHITE">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="6" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="40.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets bottom="35.0" left="30.0" right="30.0" top="35.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox prefHeight="160.0" prefWidth="297.0" styleClass="card" stylesheets="@../css/dashboard.css">
+                                       <children>
+                                          <Label text="Total Penjualan" textFill="WHITE">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="Rp400.000" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="40.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="35.0" left="30.0" right="30.0" top="35.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="160.0" prefWidth="297.0" styleClass="card" stylesheets="@../css/dashboard.css">
+                                       <children>
+                                          <Label text="Total Transaksi Sukses" textFill="WHITE">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="6" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="40.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="35.0" left="30.0" right="30.0" top="35.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <left>
+                  <AnchorPane prefHeight="600.0" prefWidth="10.0" styleClass="sidebar" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIconView glyphName="BARS" layoutX="22.0" layoutY="29.0" size="1.5em" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
+                        <VBox layoutX="20.0" layoutY="265.0" spacing="10.0" styleClass="sidebar_opt" stylesheets="@../css/dashboard.css">
+                           <children>
+                              <FontAwesomeIconView fx:id="nav_dashboard_btn" accessibleRole="BUTTON" fill="#05149e" glyphName="HOME" onMouseClicked="#handleNavDashboard" size="1.5em" styleClass="sidebar_opt_active">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="nav_product_btn" accessibleRole="BUTTON" glyphName="CUBE" onMouseClicked="#handleNavProduct" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="nav_transaction_btn" accessibleRole="BUTTON" glyphName="MONEY" onMouseClicked="#handleNavTransaction" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="navHistoryBtn" accessibleRole="BUTTON" glyphName="HISTORY" onMouseClicked="#handleNavHistory" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <Separator prefHeight="2.0" prefWidth="20.0" style="-fx-background-color: #f1f1f1;">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <FontAwesomeIconView fx:id="nav_signout_btn" accessibleRole="BUTTON" glyphName="SIGN_OUT" onMouseClicked="#handleNavSignOut" size="1.5em" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </left>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
