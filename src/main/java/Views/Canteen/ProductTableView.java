@@ -61,10 +61,10 @@ public class ProductTableView implements Observer {
         TableColumn<Product, String> descCol = (TableColumn<Product, String>) tableView.getColumns().get(3);
         descCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-        TableColumn<Product, Integer> priceCol = (TableColumn<Product, Integer>) tableView.getColumns().get(5);
+        TableColumn<Product, Integer> priceCol = (TableColumn<Product, Integer>) tableView.getColumns().get(4);
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        TableColumn<Product, Integer> stockCol = (TableColumn<Product, Integer>) tableView.getColumns().get(6);
+        TableColumn<Product, Integer> stockCol = (TableColumn<Product, Integer>) tableView.getColumns().get(5);
         stockCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
         tableView.getColumns().clear();

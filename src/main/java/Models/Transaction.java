@@ -1,5 +1,8 @@
 package Models;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -24,6 +27,10 @@ public class Transaction {
 
     public Integer getId() {
         return id;
+    }
+
+    public StringProperty getFormattedId() {
+        return new SimpleStringProperty(String.format("#%06d", id));
     }
 
     public void setId(Integer id) {

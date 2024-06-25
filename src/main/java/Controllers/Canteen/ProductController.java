@@ -125,7 +125,8 @@ public class ProductController implements Initializable {
 
     @FXML
     void handleNavProduct(MouseEvent event) {
-
+//        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        SceneLoader.loadScene(stage, "/Views/Canteen/product.fxml", "Produk");
     }
 
     @FXML
@@ -138,6 +139,12 @@ public class ProductController implements Initializable {
     void handleNavTransaction(MouseEvent event) {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         SceneLoader.loadScene(stage, "/Views/Canteen/transaction.fxml", "Transaksi");
+    }
+
+    @FXML
+    void handleNavHistory(MouseEvent event) {
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        SceneLoader.loadScene(stage, "/Views/Canteen/historyTransactions.fxml", "Riwayat Transaksi");
     }
 
     @FXML
@@ -294,7 +301,7 @@ public class ProductController implements Initializable {
 
         productManager.addObserver(productTableView);
 
-        productManager.loadProductsFromDatabase();
+        productManager.loadProductsFromDatabase(Session.getUserLoggedIn());
     }
 
     private void updateTime() {

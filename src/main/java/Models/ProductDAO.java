@@ -25,6 +25,25 @@ public class ProductDAO {
         return products;
     }
 
+    public List<Product> getAllProducts(User canteen) {
+        List<Product> products = new ArrayList<>();
+        try {
+            Connection conn = Database.getInstance().getConn();
+            String query = "SELECT * FROM products WHERE canteen_id = ?";
+            PreparedStatement preparedStatement = conn.prepareStatement(query);
+            preparedStatement.setInt(1, canteen.getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Product product = createProductFromResultSet(resultSet);
+                products.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return products;
+    }
+
     public Product getProductById(int id) {
         Product product = null;
         try {

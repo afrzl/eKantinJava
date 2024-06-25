@@ -9,6 +9,8 @@ import Utils.SceneLoader;
 import Utils.Session;
 import Views.Canteen.CardProduct;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +25,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
@@ -32,6 +35,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.UnaryOperator;
 
@@ -107,7 +111,14 @@ public class TransactionController implements Initializable, Observer {
 
     @FXML
     void handleNavTransaction(MouseEvent event) {
+//        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        SceneLoader.loadScene(stage, "/Views/Canteen/transaction.fxml", "Transaksi");
+    }
 
+    @FXML
+    void handleNavHistory(MouseEvent event) {
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        SceneLoader.loadScene(stage, "/Views/Canteen/historyTransactions.fxml", "Riwayat Transaksi");
     }
 
     @FXML
@@ -200,6 +211,9 @@ public class TransactionController implements Initializable, Observer {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateTime();
+        topbarUsername.setText(Session.getUserLoggedIn().getName());
+
         loadCart();
         loadProduct();
 
@@ -241,6 +255,16 @@ public class TransactionController implements Initializable, Observer {
         });
     }
 
+    private void updateTime() {
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            LocalDateTime now = LocalDateTime.now();
+            topbarTime.setText(now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        }), new KeyFrame(Duration.seconds(1)));
+
+        clock.setCycleCount(Timeline.INDEFINITE);
+        clock.play();
+    }
+
     private void loadCart() {
         cartManager = new CartManager();
         cartManager.addObserver(this);
@@ -248,7 +272,7 @@ public class TransactionController implements Initializable, Observer {
 
     private void loadProduct() {
         productManager = new ProductManager();
-        productManager.loadProductsFromDatabase();
+        productManager.loadProductsFromDatabase(Session.getUserLoggedIn());
         addProductsToGrid();
     }
 

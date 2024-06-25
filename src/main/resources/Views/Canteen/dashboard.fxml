@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.DashboardController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.DashboardController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -144,7 +144,7 @@
                   <AnchorPane prefHeight="600.0" prefWidth="10.0" styleClass="sidebar" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
                      <children>
                         <FontAwesomeIconView glyphName="BARS" layoutX="22.0" layoutY="29.0" size="1.5em" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
-                        <VBox layoutX="20.0" layoutY="203.0" spacing="10.0" styleClass="sidebar_opt" stylesheets="@../css/dashboard.css">
+                        <VBox layoutX="20.0" layoutY="265.0" spacing="10.0" styleClass="sidebar_opt" stylesheets="@../css/dashboard.css">
                            <children>
                               <FontAwesomeIconView fx:id="nav_dashboard_btn" accessibleRole="BUTTON" fill="#05149e" glyphName="HOME" onMouseClicked="#handleNavDashboard" size="1.5em" styleClass="sidebar_opt_active">
                                  <VBox.margin>
@@ -157,6 +157,11 @@
                                  </VBox.margin>
                               </FontAwesomeIconView>
                               <FontAwesomeIconView fx:id="nav_transaction_btn" accessibleRole="BUTTON" glyphName="MONEY" onMouseClicked="#handleNavTransaction" size="1.5em" styleClass="sidebar_opt">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="navHistoryBtn" accessibleRole="BUTTON" glyphName="HISTORY" onMouseClicked="#handleNavHistory" size="1.5em" styleClass="sidebar_opt">
                                  <VBox.margin>
                                     <Insets top="15.0" />
                                  </VBox.margin>

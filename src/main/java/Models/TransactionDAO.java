@@ -3,7 +3,9 @@ package Models;
 import Utils.Database;
 
 import java.sql.*;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,7 +104,10 @@ public class TransactionDAO {
         int totalPrice = resultSet.getInt("total_price");
         int totalPaid = resultSet.getInt("total_paid");
         int changeBack = resultSet.getInt("change_back");
-        LocalDateTime timestamp = resultSet.getTimestamp("timestamp").toLocalDateTime();
+
+        long timestampMillis = resultSet.getLong("timestamp");
+        LocalDateTime timestamp = Instant.ofEpochMilli(timestampMillis).atZone(ZoneId.systemDefault()).toLocalDateTime();
+//        LocalDateTime timestamp = resultSet.getTimestamp("timestamp").toLocalDateTime();
 
         UserDAO userDAO = new UserDAO();
         User canteen = userDAO.getUserById(canteenId);

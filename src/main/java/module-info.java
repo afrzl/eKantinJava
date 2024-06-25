@@ -15,6 +15,7 @@ module pointOfSales {
     requires jbcrypt;
     requires de.jensd.fx.glyphs.fontawesome;
     requires jasperreports;
+    requires java.desktop;
 
     opens Views to javafx.fxml;
     opens Views.Canteen to javafx.fxml;

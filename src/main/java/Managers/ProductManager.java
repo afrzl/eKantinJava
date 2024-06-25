@@ -2,6 +2,7 @@ package Managers;
 
 import Models.Product;
 import Models.ProductDAO;
+import Models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +51,11 @@ public class ProductManager extends Observable {
 
     public void loadProductsFromDatabase() {
         List<Product> productsFromDB = productDAO.getAllProducts();
+        setProducts(productsFromDB);
+    }
+    
+    public void loadProductsFromDatabase(User canteen) {
+        List<Product> productsFromDB = productDAO.getAllProducts(canteen);
         setProducts(productsFromDB);
     }
 }

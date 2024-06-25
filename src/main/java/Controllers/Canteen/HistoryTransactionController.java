@@ -1,7 +1,14 @@
 package Controllers.Canteen;
 
+import Managers.ProductManager;
+import Managers.TransactionManager;
+import Models.ProductDAO;
+import Models.Transaction;
+import Models.TransactionDAO;
 import Utils.SceneLoader;
 import Utils.Session;
+import Views.Canteen.HistoryTransactionTableView;
+import Views.Canteen.ProductTableView;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -9,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -18,7 +27,22 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class DashboardController implements Initializable {
+public class HistoryTransactionController implements Initializable {
+    @FXML
+    private TableColumn<?, ?> historyDetailCol;
+
+    @FXML
+    private TableColumn<?, ?> historyIdCol;
+
+    @FXML
+    private TableView<Transaction> historyTable;
+
+    @FXML
+    private TableColumn<?, ?> historyTimeCol;
+
+    @FXML
+    private TableColumn<?, ?> historyTotalCol;
+
     @FXML
     private FontAwesomeIconView nav_dashboard_btn;
 
@@ -37,10 +61,14 @@ public class DashboardController implements Initializable {
     @FXML
     private Label topbarUsername;
 
+    private TransactionManager transactionManager;
+    private HistoryTransactionTableView historyTransactionTableView;
+    private TransactionDAO transactionDAO;
+
     @FXML
     void handleNavDashboard(MouseEvent event) {
-//        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-//        SceneLoader.loadScene(stage, "/Views/Canteen/dashboard.fxml", "Dashboard");
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        SceneLoader.loadScene(stage, "/Views/Canteen/dashboard.fxml", "Dashboard");
     }
 
     @FXML
@@ -63,14 +91,20 @@ public class DashboardController implements Initializable {
 
     @FXML
     void handleNavHistory(MouseEvent event) {
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        SceneLoader.loadScene(stage, "/Views/Canteen/historyTransactions.fxml", "Riwayat Transaksi");
+//        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        SceneLoader.loadScene(stage, "/Views/Canteen/historyTransactions.fxml", "Riwayat Transaksi");
+    }
+
+    @FXML
+    void handleTableClick(MouseEvent event) {
+
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         updateTime();
         topbarUsername.setText(Session.getUserLoggedIn().getName());
+        loadTransactions();
     }
 
     private void updateTime() {
@@ -81,5 +115,14 @@ public class DashboardController implements Initializable {
 
         clock.setCycleCount(Timeline.INDEFINITE);
         clock.play();
+    }
+
+    private void loadTransactions() {
+        transactionManager = new TransactionManager();
+        historyTransactionTableView = new HistoryTransactionTableView(historyTable);
+
+        transactionManager.addObserver(historyTransactionTableView);
+
+        transactionManager.loadTransactionsFromDatabase();
     }
 }

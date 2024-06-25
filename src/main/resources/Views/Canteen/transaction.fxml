@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.TransactionController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Canteen.TransactionController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -34,7 +34,7 @@
                                  <children>
                                     <HBox prefHeight="50.0" prefWidth="1041.0">
                                        <children>
-                                          <Label text="Daftar Produk" textFill="#05149e">
+                                          <Label text="Transaksi" textFill="#05149e">
                                              <font>
                                                 <Font name="System Bold" size="16.0" />
                                              </font>
@@ -84,9 +84,9 @@
                                     </HBox>
                                  </children>
                               </VBox>
-                              <HBox layoutX="51.0" layoutY="109.0" prefHeight="493.0" prefWidth="959.0" spacing="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="89.0">
+                              <HBox layoutX="51.0" layoutY="109.0" prefHeight="675.0" prefWidth="1226.0" spacing="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="89.0">
                                  <children>
-                                    <VBox prefHeight="494.0" prefWidth="708.0" spacing="20.0">
+                                    <VBox prefHeight="675.0" prefWidth="773.0" spacing="20.0">
                                        <children>
                                           <GridPane alignment="CENTER" gridLinesVisible="true">
                                             <columnConstraints>
@@ -115,9 +115,9 @@
                                                 </Label>
                                              </children>
                                           </GridPane>
-                                          <ScrollPane prefHeight="446.0" prefWidth="666.0">
+                                          <ScrollPane prefHeight="620.0" prefWidth="708.0">
                                              <content>
-                                                <GridPane fx:id="productGrid" hgap="20.0" maxHeight="1.7976931348623157E308" prefHeight="426.0" prefWidth="658.0" vgap="20.0">
+                                                <GridPane fx:id="productGrid" hgap="20.0" maxHeight="1.7976931348623157E308" prefHeight="616.0" prefWidth="771.0" vgap="20.0">
                                                   <columnConstraints>
                                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -130,13 +130,13 @@
                                           </ScrollPane>
                                        </children>
                                     </VBox>
-                                    <VBox prefHeight="494.0" prefWidth="335.0" spacing="15.0">
+                                    <VBox prefHeight="494.0" prefWidth="415.0" spacing="15.0">
                                        <children>
-                                          <TableView fx:id="cartTable" onMouseClicked="#handleClickCartTable" prefHeight="336.0" prefWidth="283.0">
+                                          <TableView fx:id="cartTable" onMouseClicked="#handleClickCartTable" prefHeight="336.0" prefWidth="390.0">
                                             <columns>
-                                              <TableColumn fx:id="productNameCol" prefWidth="112.0" text="Produk" />
-                                              <TableColumn fx:id="qtyCol" prefWidth="66.4000244140625" text="QTY" />
-                                                <TableColumn fx:id="priceCol" prefWidth="102.39995117187499" text="Harga" />
+                                              <TableColumn fx:id="productNameCol" prefWidth="201.59984743595123" text="Produk" />
+                                              <TableColumn fx:id="qtyCol" minWidth="0.0" prefWidth="81.60009765625" text="QTY" />
+                                                <TableColumn fx:id="priceCol" prefWidth="130.9332275390625" text="Harga" />
                                             </columns>
                                           </TableView>
                                           <VBox prefHeight="146.0" prefWidth="283.0" spacing="10.0">
@@ -148,7 +148,7 @@
                                                             <Font size="16.0" />
                                                          </font>
                                                          <HBox.margin>
-                                                            <Insets left="80.0" />
+                                                            <Insets left="150.0" />
                                                          </HBox.margin>
                                                       </Label>
                                                       <Label fx:id="totalLabel" prefHeight="26.0" prefWidth="128.0" style="-fx-font-weight: bold;" text="Rp100.000">
@@ -165,10 +165,10 @@
                                                             <Font size="16.0" />
                                                          </font>
                                                          <HBox.margin>
-                                                            <Insets left="80.0" />
+                                                            <Insets left="150.0" />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="payField" onKeyPressed="#handlePayField" onKeyReleased="#handlePayField" onKeyTyped="#handlePayField" prefHeight="49.0" prefWidth="123.0" style="-fx-font-size: 16;">
+                                                      <TextField fx:id="payField" onKeyPressed="#handlePayField" onKeyReleased="#handlePayField" onKeyTyped="#handlePayField" prefHeight="38.0" prefWidth="179.0" style="-fx-font-size: 16;">
                                                          <font>
                                                             <Font size="19.0" />
                                                          </font></TextField>
@@ -181,7 +181,7 @@
                                                             <Font size="16.0" />
                                                          </font>
                                                          <HBox.margin>
-                                                            <Insets left="80.0" />
+                                                            <Insets left="150.0" />
                                                          </HBox.margin>
                                                       </Label>
                                                       <Label fx:id="returnLabel" prefHeight="26.0" prefWidth="128.0" text="Rp100.000">
@@ -193,7 +193,7 @@
                                                 </HBox>
                                              </children>
                                           </VBox>
-                                          <HBox prefHeight="78.0" prefWidth="283.0" spacing="15.0">
+                                          <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="63.0" prefWidth="415.0" spacing="15.0">
                                              <children>
                                                 <Button fx:id="cancelButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" text="Batal">
                                                    <font>
@@ -227,19 +227,24 @@
                   <AnchorPane prefHeight="600.0" prefWidth="10.0" styleClass="sidebar" stylesheets="@../css/dashboard.css" BorderPane.alignment="CENTER">
                      <children>
                         <FontAwesomeIconView glyphName="BARS" layoutX="22.0" layoutY="29.0" size="1.5em" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="14.0" />
-                        <VBox layoutX="20.0" layoutY="203.0" spacing="10.0" styleClass="sidebar_opt" stylesheets="@../css/dashboard.css">
+                        <VBox layoutX="20.0" layoutY="265.0" spacing="10.0" styleClass="sidebar_opt" stylesheets="@../css/dashboard.css">
                            <children>
-                              <FontAwesomeIconView fx:id="nav_dashboard_btn" accessibleRole="BUTTON" fill="#05149e" glyphName="HOME" onMouseClicked="#handleNavDashboard" size="1.5em" styleClass="sidebar_opt">
+                              <FontAwesomeIconView fx:id="nav_dashboard_btn1" accessibleRole="BUTTON" fill="#05149e" glyphName="HOME" onMouseClicked="#handleNavDashboard" size="1.5em" styleClass="sidebar_opt">
                                  <VBox.margin>
                                     <Insets top="15.0" />
                                  </VBox.margin>
                               </FontAwesomeIconView>
-                              <FontAwesomeIconView fx:id="nav_product_btn" accessibleRole="BUTTON" glyphName="CUBE" onMouseClicked="#handleNavProduct" size="1.5em" styleClass="sidebar_opt">
+                              <FontAwesomeIconView fx:id="nav_product_btn1" accessibleRole="BUTTON" glyphName="CUBE" onMouseClicked="#handleNavProduct" size="1.5em" styleClass="sidebar_opt">
                                  <VBox.margin>
                                     <Insets top="15.0" />
                                  </VBox.margin>
                               </FontAwesomeIconView>
-                              <FontAwesomeIconView fx:id="nav_transaction_btn" accessibleRole="BUTTON" glyphName="MONEY" onMouseClicked="#handleNavTransaction" size="1.5em" styleClass="sidebar_opt_active">
+                              <FontAwesomeIconView fx:id="nav_transaction_btn1" accessibleRole="BUTTON" glyphName="MONEY" onMouseClicked="#handleNavTransaction" size="1.5em" styleClass="sidebar_opt_active">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fx:id="navHistoryBtn" accessibleRole="BUTTON" glyphName="HISTORY" onMouseClicked="#handleNavHistory" size="1.5em" styleClass="sidebar_opt">
                                  <VBox.margin>
                                     <Insets top="15.0" />
                                  </VBox.margin>
@@ -249,7 +254,7 @@
                                     <Insets bottom="15.0" top="15.0" />
                                  </VBox.margin>
                               </Separator>
-                              <FontAwesomeIconView fx:id="nav_signout_btn" accessibleRole="BUTTON" glyphName="SIGN_OUT" onMouseClicked="#handleNavSignOut" size="1.5em" />
+                              <FontAwesomeIconView fx:id="nav_signout_btn1" accessibleRole="BUTTON" glyphName="SIGN_OUT" onMouseClicked="#handleNavSignOut" size="1.5em" />
                            </children>
                         </VBox>
                      </children>
