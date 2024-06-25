@@ -70,3 +70,8 @@
     -fx-background-color: #ff0060e;
     -fx-text-fill: #ffffff;
 }
+
+.grayscale {
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0.0, 0, 0);
+    -fx-opacity: 0.5;
+}

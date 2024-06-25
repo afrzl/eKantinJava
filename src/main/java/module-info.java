@@ -14,6 +14,7 @@ module pointOfSales {
     requires org.xerial.sqlitejdbc;
     requires jbcrypt;
     requires de.jensd.fx.glyphs.fontawesome;
+    requires jasperreports;
 
     opens Views to javafx.fxml;
     opens Views.Canteen to javafx.fxml;

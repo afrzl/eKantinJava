@@ -4,6 +4,7 @@ import Managers.CartManager;
 import Managers.ProductManager;
 import Models.*;
 import Utils.AlertUtils;
+import Utils.GenerateReceipt;
 import Utils.SceneLoader;
 import Utils.Session;
 import Views.Canteen.CardProduct;
@@ -22,8 +23,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.text.NumberFormat;
@@ -183,7 +187,15 @@ public class TransactionController implements Initializable, Observer {
 
         TransactionDAO transactionDAO = new TransactionDAO();
         transactionDAO.insertTransaction(transaction);
+
+        GenerateReceipt receiptGenerator = new GenerateReceipt();
+        receiptGenerator.generateReceipt(cartItems);
+
         AlertUtils.showSuccessAlert("Sukses", "Transaksi Berhasil");
+
+
+        cartManager.resetCart();
+        payField.setText("");
     }
 
     @Override
@@ -249,6 +261,10 @@ public class TransactionController implements Initializable, Observer {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/Canteen/cardProduct.fxml"));
                 loader.setControllerFactory(c -> new CardProduct(product, cartManager));
                 AnchorPane cardProduct = loader.load();
+
+                if (product.getStock() == 0) {
+                    cardProduct.getStyleClass().add("grayscale");
+                }
 
                 productGrid.add(cardProduct, col, row);
 

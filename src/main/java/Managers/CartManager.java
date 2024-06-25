@@ -47,6 +47,12 @@ public class CartManager extends Observable {
         notifyObservers(cart);
     }
 
+    public void resetCart() {
+        cart.clear();
+        setChanged();
+        notifyObservers(cart);
+    }
+
     public List<CartItem> getCart() {
         return cart;
     }

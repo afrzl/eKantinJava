@@ -1,11 +1,14 @@
 package Models;
 
+import Managers.ProductManager;
 import Utils.Database;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class TransactionDetailDAO {
+    private ProductManager productManager = new ProductManager();
+
     public ArrayList<TransactionDetail> getTransactionDetailsByTransactionId(int transactionId) {
         ArrayList<TransactionDetail> transactionDetails = new ArrayList<>();
         try {
@@ -52,6 +55,11 @@ public class TransactionDetailDAO {
                     transactionDetail.setId(id);
                 }
             }
+
+            Product product = transactionDetail.getProduct();
+            int newStock = product.getStock() - transactionDetail.getQty();
+            product.setStock(newStock);
+            productManager.updateProduct(product);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
